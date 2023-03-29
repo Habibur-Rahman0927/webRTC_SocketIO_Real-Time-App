@@ -12,6 +12,7 @@ const LoginPage = ({ login }) => {
   const [mail, setMail] = useState('');
   const [password, setPassword] = useState('');
   const [isFormValid, setIsFormValid] = useState(false);
+  // const localUserDetails = localStorage.getItem('user')
   const navigate = useNavigate();
   useEffect(() => {
     setIsFormValid(validateLoginForm({ mail, password }))

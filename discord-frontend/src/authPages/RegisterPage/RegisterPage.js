@@ -13,6 +13,7 @@ const RegisterPage = ({ register }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isFormValid, setIsFormValid] = useState(false);
+  // const localUserDetails = localStorage.getItem('user')
   const navigate = useNavigate();
   useEffect(() => {
     setIsFormValid(validateRegisterForm({ username, mail, password }))

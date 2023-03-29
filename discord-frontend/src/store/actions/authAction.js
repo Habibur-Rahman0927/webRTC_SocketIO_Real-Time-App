@@ -10,6 +10,7 @@ export const getActions = (dispatch) => {
     return {
         login: (userDetails, navigate) => dispatch(login(userDetails, navigate)),
         register: (userDetails, navigate) => dispatch(register(userDetails, navigate)),
+        setUserDetails: (userDetails) => dispatch(setUserDetails(userDetails)),
     }
 }
 
@@ -31,7 +32,8 @@ const login = (userDetails, navigate) => {
             const { userDetails } = response.data;
             localStorage.setItem('user', JSON.stringify(userDetails));
             dispatch(setUserDetails(userDetails));
-            // window.location.href = '/dashboard';
+            window.location.href = '/dashboard';
+            // window.location.pathname = '/dashboard';
         }
     }
 }
@@ -47,7 +49,7 @@ const register = (userDetails, navigate) => {
             const { userDetails } = response.data;
             localStorage.setItem('user', JSON.stringify(userDetails));
             dispatch(setUserDetails(userDetails));
-            // window.location.href = '/dashboard';
+            window.location.href = '/dashboard';
         }
     }
 }
